@@ -1,0 +1,14 @@
+name: study
+on: push
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository code
+              uses: actions/checkout@v3
+            - name: setup
+              run: make setup
+            - name: tests
+              run: make test
+            - name: linter
+              run: make lint
